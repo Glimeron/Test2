@@ -1,7 +1,0 @@
-streamlit
-scikit-learn
-nltk
-joblib
-pandas
-PyYAML
-streamlit-authenticator

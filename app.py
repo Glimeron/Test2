@@ -65,7 +65,7 @@ if st.session_state.get('authentication_status'):
         Цей модуль використовує алгоритм **Random Forest** та методи **NLP** для автоматичного визначення категорії баг-репорту.
         """)
 
-        tab1, tab2 = st.tabs(["✍️ Одне звернення", "📁 Пакетна обробка (CSV)"])
+        tab1, tab2 = st.tabs(["Одне звернення", "Пакетна обробка (CSV)"])
 
         with tab1:
             user_input = st.text_area(
@@ -88,7 +88,7 @@ if st.session_state.get('authentication_status'):
                         max_prob = max(probabilities) * 100
                         
                         execution_time = time.time() - start_time
-                        st.info(f"⚡ Ресурси отримано з кешу. Час обробки та класифікації: {execution_time:.4f} сек.")
+                        st.info(f"Ресурси отримано з кешу. Час обробки та класифікації: {execution_time:.4f} сек.")
 
                         # Зберігаємо в історію
                         st.session_state.bug_history.append({
@@ -106,7 +106,7 @@ if st.session_state.get('authentication_status'):
 
                      
                         # БЛОК: EXPLAINABLE AI (Думки ШІ)
-                        with st.expander("🧠 Як ШІ дійшов цього висновку? (Логіка моделі)"):
+                        with st.expander("Як ШІ дійшов цього висновку? (Логіка моделі)"):
                             st.write("**Крок 1. Відкидання словесного шуму:**")
                             st.info(f"*{cleaned_input}*")
                             
@@ -161,8 +161,8 @@ if st.session_state.get('authentication_status'):
                 except Exception as e:
                     st.error(f"Помилка читання файлу: {e}")
 
-    elif page == "📊 Таблиця категорій (Історія)":
-        st.title("📊 Історія оброблених звернень")
+    elif page == "📊 Історія":
+        st.title("Історія оброблених звернень")
 
         if len(st.session_state.bug_history) > 0:
             df_history = pd.DataFrame(st.session_state.bug_history)

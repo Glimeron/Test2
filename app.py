@@ -162,7 +162,7 @@ if st.session_state.get('authentication_status'):
                     st.error(f"Помилка читання файлу: {e}")
 
     elif page == "📊 Таблиця категорій (Історія)":
-        st.title(" Історія оброблених звернень")
+        st.title("📊 Історія оброблених звернень")
 
         if len(st.session_state.bug_history) > 0:
             df_history = pd.DataFrame(st.session_state.bug_history)

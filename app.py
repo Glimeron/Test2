@@ -57,7 +57,7 @@ if st.session_state.get('authentication_status'):
     authenticator.logout('Вийти з акаунта', 'sidebar')
 
     st.sidebar.title("Навігація")
-    page = st.sidebar.radio("Оберіть розділ:", ["📝 Нове звернення", "📊 Таблиця категорій (Історія)"])
+    page = st.sidebar.radio("Оберіть розділ:", ["📝 Нове звернення", "📊 Таблиця категорій "])
 
     if page == "📝 Нове звернення":
         st.title("🛠 Інтелектуальна система класифікації звернень")
